@@ -1,1 +1,5 @@
-# *UMass Recreation Center Live Crowd Level* by Daily Coder
+# *UMass Recreation Center Participatory Crowd Sensing* by Daily Coder
+
+## Team Overview
+Member(s) : Shamanth Kuthpadi
+- GitHub Username: `Shamanth-GiT`
