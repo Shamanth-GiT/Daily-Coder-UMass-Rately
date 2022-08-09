@@ -1,0 +1,26 @@
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    position: relative;
+}
+
+.date-time {
+    font-style: oblique;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+#title {
+    font-style: normal;
+    font-weight: 600;
+    color: rgb(150, 58, 58);
+}
+
+.author{
+    font-style: oblique;
+    font-weight: 600;
+    margin-left: 1em;
+    margin-top: 0.2em;
+}
