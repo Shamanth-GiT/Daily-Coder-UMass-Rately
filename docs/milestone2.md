@@ -2,7 +2,7 @@
 **VIDEO of UI:**
 
 
-![ alt text for screen readers]("/docs/UI%20-%20MS2.png" "Text to show on mouseover")
+![Screenshot](UI%20-%20MS2.png)
 
 **Pop Up**
 As soon as the page loads the user is met with a pop up that asks for information regarding their current location.
