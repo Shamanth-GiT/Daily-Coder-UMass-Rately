@@ -12,6 +12,15 @@ body{
     margin-right: 10px;
 }
 
+#status-form {
+    width: max-content;
+    min-width: 30em;
+    min-height: 5rem;
+    border-radius: 1rem;
+    border:2.5px solid rgb(0, 0, 0);
+    margin-left: 10px;
+}
+
 #title {
     font-style: normal;
     font-weight: 600;
@@ -23,4 +32,31 @@ body{
     font-weight: 600;
     margin-left: 1em;
     margin-top: 0.2em;
+}
+
+.scroll-items{
+    font-style: normal;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+}
+
+.status{
+    margin-left: 10px;
+    width: fit-content;
+    min-width: 40rem;
+    max-width: 40rem;
+}
+
+.image-submit{
+    margin-left: 10px;
+    width: fit-content;
+    min-width: 40rem;
+    max-width: 40rem;
+}
+
+#logo{
+    -ms-transform: scale(0.5,0.5); /* IE 9 */
+    -webkit-transform: scale(0.5,0.5); /* Safari */
+    transform: scale(0.5, 0.5);
 }
