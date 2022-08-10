@@ -5,6 +5,9 @@
 ## Image of UI:
 ![Screenshot](UI%20-%20MS2.png)
 
+## Time
+Live time and date by the millisecond!
+
 ## Pop Up
 As soon as the page loads the user is met with a pop up that asks for information regarding their current location.
 
