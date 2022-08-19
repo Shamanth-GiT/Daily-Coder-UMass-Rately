@@ -37,7 +37,7 @@ class StatusBoard {
         let json = await response.json();
 
         let html1 = `<h1>Status Reports</h1>`;
-        html1 += '<table style = "width: 100%; z-index: 1" border = 1>';
+        html1 += '<table> <tr> <th>Time</th> <th>Date</th> <th>Floor</th> <th>crowd</th> <th>Description</th> <tr>';
         Array.from(json, x => {
         html1 += `
             <tr>
