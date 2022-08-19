@@ -22,11 +22,12 @@ export class Database {
 
   async init() {
     const queryText = `
-      create table if not exists scores (
-        name varchar(30),
-        word varchar(30),
-        score integer,
-        type_of_score varchar(30)
+      create table if not exists status (
+        time varchar(30),
+        date varchar(30),
+        floor integer,
+        crowd integer,
+        description varchar(30)
       ) 
     `;
     
@@ -36,5 +37,13 @@ export class Database {
   async close() {
     this.client.release();
     await this.pool.end();
+  }
+
+  async saveStatus(time, date, floor, crowd, desc){
+    const queryText = 
+        'INSERT INTO status (time, date, floor, crowd, description) VALUES ($1, $2, $3, $4, $5) RETURNING *';
+    
+    const res = await this.client.query(queryText, [time, date, floor, crowd, desc]);
+    return res.rows;
   }
 }

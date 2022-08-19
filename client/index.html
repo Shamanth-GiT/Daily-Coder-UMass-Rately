@@ -39,6 +39,10 @@
                 <label for="description" class="form-label">Description of Crowd:</label>
                 <input type="text" class="form-control" id="description" placeholder="Enter description">
             </div>
+            <div class="mb-3 status">
+              <label for="crowd-input" class="form-label">Crowd Level:</label>
+              <input type="number" class="form-control" id="crowd-input" placeholder="Enter a number">
+            </div>
       </div>
 
       <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -67,7 +71,7 @@
             </div>
             <div class="modal-body">
               What floor of the gym are you located?
-              <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <select id="floorLev" class="form-select form-select-sm" aria-label=".form-select-sm example">
                 <option selected>Open this select menu</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -89,7 +93,7 @@
             </div>
             <div class="modal-body">
               What is the current crowd level on a scale of 1-10?
-              <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <select id="crowdLev" class="form-select form-select-sm" aria-label=".form-select-sm example">
                 <option selected>Open this select menu</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
