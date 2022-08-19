@@ -1,0 +1,21 @@
+{
+  "name": "cs326-project-daily-coder",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "author": "Shamanth Kuthpadi",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1"
+  }
+}
