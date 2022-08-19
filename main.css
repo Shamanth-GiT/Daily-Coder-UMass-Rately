@@ -48,13 +48,6 @@ body{
     max-width: 40rem;
 }
 
-.image-submit{
-    margin-left: 10px;
-    width: fit-content;
-    min-width: 40rem;
-    max-width: 40rem;
-}
-
 #logo{
     -ms-transform: scale(0.5,0.5); /* IE 9 */
     -webkit-transform: scale(0.5,0.5); /* Safari */
