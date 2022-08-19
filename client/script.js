@@ -1,3 +1,5 @@
+import { statboard } from './statusboard.js'
+
 let ls = window.localStorage;
 
 // DOM Extractions
@@ -35,3 +37,5 @@ floor.addEventListener("keyup", () => {
 description.addEventListener("keyup", () => {
     ls["description"] = JSON.stringify(description.value);
 });
+
+

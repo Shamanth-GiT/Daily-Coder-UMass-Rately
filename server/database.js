@@ -46,4 +46,18 @@ export class Database {
     const res = await this.client.query(queryText, [time, date, floor, crowd, desc]);
     return res.rows;
   }
+
+  async avgCrowd(){
+    const queryText = 'SELECT AVG (crowd) FROM status';
+
+    const res = await this.client.query(queryText);
+    return res.rows;
+  }
+
+  async getAll(){
+    const queryText = 'SELECT * FROM status';
+    const res = await this.client.query(queryText);
+
+    return res.rows;
+  }
 }

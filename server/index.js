@@ -19,6 +19,16 @@ class StatusServer {
             await self.db.saveStatus(time, date, floor, crowd, description);
             res.status(200).json({time: time, date: date, floor: floor, crowd: crowd, description: description});
         });
+
+        this.app.get('/crowd', async (req, res) => {
+            const avg = await self.db.avgCrowd();
+            res.status(200).json(avg);
+        });
+
+        this.app.get('/all', async (req, res) => {
+            const all = await self.db.getAll();
+            res.status(200).json(all);
+        });
     }
 
     async initDb(){
