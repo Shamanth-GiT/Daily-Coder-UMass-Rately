@@ -23,15 +23,22 @@ class StatusBoard {
         });
 
         const data = await response.json();
-
-        return data;
+        console.log(data[0].avg);
+        return data[0];
     }
 
     async render(element){
-        let cr = this.avgCrowd()[0].average;
-        let html1 = `<h1>Average Crowd: ${cr}</h1>`;
+        // let cr = Number(this.avgCrowd()[0].avg);
+        
+        let response = await fetch(`/all`, {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'}
+          });
+        let json = await response.json();
+
+        let html1 = `<h1>Status Reports</h1>`;
         html1 += '<table style = "width: 100%; z-index: 1" border = 1>';
-        this.board.forEach(x => {
+        Array.from(json, x => {
         html1 += `
             <tr>
             <td>${x.time}</td>

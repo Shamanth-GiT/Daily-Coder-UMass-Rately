@@ -53,3 +53,18 @@ body{
     -webkit-transform: scale(0.5,0.5); /* Safari */
     transform: scale(0.5, 0.5);
 }
+
+#curr-crowd{
+    background-color: rgb(168, 34, 36);
+    border-radius: 10px;
+    font-size: large;
+    font-weight: 900;
+    padding: 7px;
+    color:aliceblue;
+    border-color: black;
+}
+
+#curr-crowd:hover{
+    background-color: rgba(255, 255, 255, 0.64);
+    color: black;
+}
