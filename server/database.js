@@ -55,7 +55,7 @@ export class Database {
   }
 
   async getAll(){
-    const queryText = 'SELECT * FROM status LIMIT 10';
+    const queryText = 'SELECT * FROM status';
     const res = await this.client.query(queryText);
 
     return res.rows;

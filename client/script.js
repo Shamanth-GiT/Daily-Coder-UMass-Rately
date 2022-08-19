@@ -13,6 +13,10 @@ const boardElem = document.getElementById("data-reports");
 let floor = document.getElementById("floor-input");
 let crowd = document.getElementById("crowd-input");
 let description = document.getElementById("description");
+let floorLev = document.getElementById("floorLev");
+let crowdLev = document.getElementById("crowdLev");
+const continual1 = document.getElementById("continual_1");
+const continual2 = document.getElementById("continual_2");
 
 // Setting the current date and time
 setInterval(() => {
@@ -29,14 +33,6 @@ window.onload=function(){
 modalButton.style.visibility = 'hidden';
 
 
-// floor.addEventListener("keyup", () => {
-//     ls["floor"] = JSON.stringify(floor.value);
-// });
-
-// description.addEventListener("keyup", () => {
-//     ls["description"] = JSON.stringify(description.value);
-// });
-
 currCrowd.addEventListener("click", () => {
     statboard.render(boardElem);
 });
@@ -45,5 +41,12 @@ submit.addEventListener("click", () => {
     let ts = new Date();
     statboard.saveStatus(ts.toLocaleTimeString(), ts.toLocaleDateString(), floor.value , crowd.value, JSON.stringify(description.value));
     boardElem.innerHTML = '';
+    statboard.render(boardElem);
+});
+
+continual2.addEventListener("click", () => {
+    let ts = new Date();
+    console.log(floorLev.value);
+    statboard.saveStatus(ts.toLocaleTimeString(), ts.toLocaleDateString(), floorLev.value , crowdLev.value, '');
     statboard.render(boardElem);
 });
