@@ -59,7 +59,7 @@ export class Database {
   async numRows(){
     const queryText = 'SELECT COUNT(*) FROM status';
     const res = await this.client.query(queryText);
-    return res.rows;
+    return Number(res.rows[0].count);
   }
 
   async getAll(){
