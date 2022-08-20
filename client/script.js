@@ -28,13 +28,14 @@ date.innerHTML = d.toLocaleDateString();
 
 window.onload=function(){
     modalButton.click();
+    statboard.render(boardElem);
 };
 
 modalButton.style.visibility = 'hidden';
 
 
 currCrowd.addEventListener("click", () => {
-    statboard.render(boardElem);
+    statboard.renderWithTitle(boardElem);
 });
 
 submit.addEventListener("click", () => {
@@ -50,3 +51,4 @@ continual2.addEventListener("click", () => {
     statboard.saveStatus(ts.toLocaleTimeString(), ts.toLocaleDateString(), floorLev.value , crowdLev.value, '');
     statboard.render(boardElem);
 });
+statboard.showMessage(document.getElementById("message"));

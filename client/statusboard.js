@@ -23,29 +23,71 @@ class StatusBoard {
         });
 
         const data = await response.json();
-        console.log(data[0].avg);
-        return data[0];
+        return data;
     }
 
     async render(element){
-        // let cr = Number(this.avgCrowd()[0].avg);
         
         let response = await fetch(`/all`, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
           });
         let json = await response.json();
-
-        let html1 = `<h1>Status Reports</h1>`;
-        html1 += '<table> <tr> <th>Time</th> <th>Date</th> <th>Floor</th> <th>crowd</th> <th>Description</th> <tr>';
-        Array.from(json, x => {
+        
+        const recent = json.slice(-10);
+        let html1='';
+        html1 += '<table> <tr> <th>Time</th> <th>Date</th> <th>Floor</th> <th>Crowd</th> <tr>';
+        Array.from(recent, x => {
         html1 += `
             <tr>
             <td>${x.time}</td>
             <td>${x.date}</td>
             <td>${x.floor}</td>
             <td>${x.crowd}</td>
-            <td>${x.desc}</td>
+            </tr>
+        `;
+        });
+        html1 += '</table>';
+        element.innerHTML = html1;
+    }
+
+    async showMessage(element){
+        let cr = await this.avgCrowd();
+
+        if(cr < 4){
+            element.innerHTML = 'The gym is not busy.'
+        }
+        if(cr >=4 && cr<6){
+            element.innerHTML = 'The gym is moderately busy.'
+        }
+        if(cr>=6 && cr<8){
+            element.innerHTML = 'The gym is busy.'
+        }
+        else{
+            element.innerHTML = 'The gym is extremely busy'
+        }
+    }
+
+    async renderWithTitle(element){
+        let cr = await this.avgCrowd();
+        
+        let response = await fetch(`/all`, {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'}
+          });
+        let json = await response.json();
+        
+        const recent = json.slice(-10);
+
+        let html1 = `<h1>Status Reports - Average Crowd: ${cr}</h1>`;
+        html1 += '<table> <tr> <th>Time</th> <th>Date</th> <th>Floor</th> <th>Crowd</th> <tr>';
+        Array.from(recent, x => {
+        html1 += `
+            <tr>
+            <td>${x.time}</td>
+            <td>${x.date}</td>
+            <td>${x.floor}</td>
+            <td>${x.crowd}</td>
             </tr>
         `;
         });

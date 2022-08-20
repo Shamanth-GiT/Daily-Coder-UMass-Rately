@@ -48,8 +48,15 @@ export class Database {
   }
 
   async avgCrowd(){
-    const queryText = 'SELECT AVG (crowd) FROM status';
+    const queryText = 'SELECT (crowd) FROM status';
 
+    const res = await this.client.query(queryText);
+    let crowdVals = res.rows.reduce((acc, elem) => elem.crowd !== null ? acc += elem.crowd : acc, 0);
+    return Math.floor(crowdVals/res.rows.length);
+  }
+
+  async numRows(){
+    const queryText = 'SELECT COUNT * FROM status';
     const res = await this.client.query(queryText);
     return res.rows;
   }
