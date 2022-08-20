@@ -75,11 +75,16 @@ class StatusBoard {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
           });
+
+        let response2 = await fetch('/responses', {
+            method: 'GET',
+        });
+        let json2 = await response2.json();
         let json = await response.json();
-        
+        let num = json2["count"];
         const recent = json.slice(-10);
 
-        let html1 = `<h1>Status Reports - Average Crowd: ${cr}</h1>`;
+        let html1 = `<h1>Status Reports - Average Crowd: ${cr} </h1>`;
         html1 += '<table> <tr> <th>Time</th> <th>Date</th> <th>Floor</th> <th>Crowd</th> <tr>';
         Array.from(recent, x => {
         html1 += `

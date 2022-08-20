@@ -29,6 +29,11 @@ class StatusServer {
             const all = await self.db.getAll();
             res.status(200).json(all);
         });
+
+        this.app.get('/responses', async (req, res) => {
+            const rows = await self.db.numRows();
+            res.status(200).json(rows);
+        });
     }
 
     async initDb(){
