@@ -29,22 +29,26 @@ date.innerHTML = d.toLocaleDateString();
 window.onload= async function (){
     modalButton.click();
     await statboard.render(boardElem);
+    await statboard.renderDescriptions(descBoard);
 };
 
 modalButton.style.visibility = 'hidden';
 
 
 currCrowd.addEventListener("click", async () => {
-    await statboard.renderWithTitle(boardElem);
-    await statboard.renderDescriptions(descBoard);
+    await statboard.showMessage(document.getElementById("message"));
 });
 
 submit.addEventListener("click", async () => {
-    let ts = new Date();
-    console.log(description.value);
-    await statboard.saveStatus(ts.toLocaleTimeString(), ts.toLocaleDateString(), floor.value , crowd.value, description.value);
-    boardElem.innerHTML = '';
-    await statboard.render(boardElem);
+    if(floor.value >= 0 && crowd.value.length >= 0 && description.value.length > 0){
+        let ts = new Date();
+        console.log(description.value);
+        await statboard.saveStatus(ts.toLocaleTimeString(), ts.toLocaleDateString(), floor.value , crowd.value, description.value);
+        boardElem.innerHTML = '';
+        await statboard.render(boardElem);
+        await statboard.renderDescriptions(descBoard);
+        await statboard.showMessage(document.getElementById("message"));
+    }
 });
 
 continual2.addEventListener("click", async () => {
@@ -53,4 +57,3 @@ continual2.addEventListener("click", async () => {
     await statboard.saveStatus(ts.toLocaleTimeString(), ts.toLocaleDateString(), floorLev.value , crowdLev.value, '');
     await statboard.render(boardElem);
 });
-await statboard.showMessage(document.getElementById("message"));
