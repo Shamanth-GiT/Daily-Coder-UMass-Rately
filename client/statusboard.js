@@ -35,7 +35,7 @@ class StatusBoard {
         let json = await response.json();
         
         const recent = json.slice(-10).reverse();
-        let html1 = `<h1>Status Reports - Average Crowd: ${cr} </h1>`;
+        let html1 = `<h1>Status Reports</h1>`;
         html1 += '<table> <tr> <th>Time</th> <th>Date</th> <th>Floor</th> <th>Crowd</th> <tr>';
         Array.from(recent, x => {
         html1 += `
@@ -84,7 +84,7 @@ class StatusBoard {
         let num = json2["count"];
         const recent = json.slice(-10);
 
-        let html1 = `<h1>Status Reports - Average Crowd: ${cr} </h1>`;
+        let html1 = `<h1>Status Reports</h1>`;
         html1 += '<table> <tr> <th>Time</th> <th>Date</th> <th>Floor</th> <th>Crowd</th> <tr>';
         Array.from(recent, x => {
         html1 += `
@@ -110,7 +110,7 @@ class StatusBoard {
         element.appendChild(head);
         const json = await response.json();
         console.log(json);
-        Array.from(json, x => {
+        Array.from(json.reverse(), x => {
             const div = document.createElement('div');
             div.classList.add('desc-item');
             div.innerText = x;
