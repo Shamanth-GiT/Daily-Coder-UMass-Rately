@@ -40,7 +40,7 @@ currCrowd.addEventListener("click", async () => {
 });
 
 submit.addEventListener("click", async () => {
-    if(floor.value >= 0 && crowd.value.length >= 0 && description.value.length > 0){
+    if(floor.value >= 0 && crowd.value >= 0 && description.value.length > 0){
         let ts = new Date();
         console.log(description.value);
         await statboard.saveStatus(ts.toLocaleTimeString(), ts.toLocaleDateString(), floor.value , crowd.value, description.value);
