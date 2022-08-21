@@ -17,7 +17,7 @@ let floorLev = document.getElementById("floorLev");
 let crowdLev = document.getElementById("crowdLev");
 const continual1 = document.getElementById("continual_1");
 const continual2 = document.getElementById("continual_2");
-
+const descBoard = document.getElementById("desc-reports");
 // Setting the current date and time
 setInterval(() => {
     let t = new Date();
@@ -36,6 +36,7 @@ modalButton.style.visibility = 'hidden';
 
 currCrowd.addEventListener("click", () => {
     statboard.renderWithTitle(boardElem);
+    statboard.renderDescriptions(descBoard);
 });
 
 submit.addEventListener("click", () => {

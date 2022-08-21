@@ -30,6 +30,11 @@ class StatusServer {
             res.status(200).json(all);
         });
 
+        this.app.get('/all/descriptions', async (req, res) => {
+            const all = await self.db.getAllDesc();
+            res.status(200).json(all);
+        });
+
         this.app.get('/responses', async (req, res) => {
             const rows = await self.db.numRows();
             res.status(200).json(rows);

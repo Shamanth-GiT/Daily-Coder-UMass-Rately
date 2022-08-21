@@ -99,6 +99,22 @@ class StatusBoard {
         html1 += '</table>';
         element.innerHTML = html1;
     }
+
+    async renderDescriptions(element) {
+        element.innerHTML = '';
+        const response = await fetch('/all/descriptions', {
+            method: 'GET',
+        }); 
+
+        const json = response.json().slice(-10);
+
+        json.forEach(x => {
+            const div = document.createElement('div');
+            div.classList.add('desc-item');
+            div.innerText = x;
+            element.appendChild(div);
+        });
+    }
 }
 
 const statboard = new StatusBoard();

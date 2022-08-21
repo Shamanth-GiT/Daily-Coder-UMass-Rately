@@ -68,4 +68,11 @@ export class Database {
 
     return res.rows;
   }
+
+  async getAllDesc(){
+    const queryText = 'SELECT * FROM status';
+    const res = await this.client.query(queryText);
+
+    return res.rows.map(x => x.description);
+  }
 }
