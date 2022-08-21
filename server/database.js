@@ -27,7 +27,7 @@ export class Database {
         date varchar(30),
         floor integer,
         crowd integer,
-        description varchar(30)
+        description varchar(1000)
       ) 
     `;
     

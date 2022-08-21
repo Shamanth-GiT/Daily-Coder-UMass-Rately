@@ -106,9 +106,9 @@ class StatusBoard {
             method: 'GET',
         }); 
 
-        const json = response.json().slice(-10);
-
-        json.forEach(x => {
+        const json = await response.json();
+        console.log(json);
+        Array.from(json, x => {
             const div = document.createElement('div');
             div.classList.add('desc-item');
             div.innerText = x;
