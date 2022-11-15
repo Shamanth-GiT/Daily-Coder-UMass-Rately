@@ -9,6 +9,7 @@
   "main": "index.js",
   "scripts": {
     "devStart": "nodemon server/index.js",
+    "start": "node server/index.js",
     "deploy": "copyfiles client/*.js client/*.json client/*.html client/*.css server/*.js .env package*.json deploy"
   },
   "author": "Shamanth Kuthpadi",
