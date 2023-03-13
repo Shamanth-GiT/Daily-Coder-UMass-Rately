@@ -27,7 +27,7 @@ The data used to measure crowd level will include:
 
 ## App Usage
 ```
-
+https://github.com/Shamanth-GiT/Daily-Coder-UMass-Rately.git 
 npm install
 npm start
 ```
