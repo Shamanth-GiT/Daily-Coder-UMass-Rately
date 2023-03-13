@@ -24,7 +24,13 @@ The data used to measure crowd level will include:
 - frequency of each poll option
 - Area of gym
 - Time of day
-- Images
+
+## App Usage
+```
+
+npm install
+npm start
+```
 
 ## Link to App:
 https://gentle-cliffs-89710.herokuapp.com
