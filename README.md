@@ -18,8 +18,6 @@ I am hoping to establish a one-page web application that is initialized to show 
 - not busy
 - view status
 
-In addition, users can submit a photo to further emphasize the crowd level.
-
 Upon completion a status section appears on the page that provides users with the live crowd info, based on the statistics users can then make decision as to waiting until later or to go upon view.
 The data used to measure crowd level will include:
 - count of poll responses
@@ -27,3 +25,9 @@ The data used to measure crowd level will include:
 - Area of gym
 - Time of day
 - Images
+
+## Link to App:
+https://gentle-cliffs-89710.herokuapp.com
+
+## Link to Recording:
+https://www.loom.com/share/2c843b75676a4d2b88efd75c65594e4d
